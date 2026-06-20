@@ -1,12 +1,13 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    EmpleadoController::guardar($_POST['nombre'], $_POST['puesto'], $_POST['salario']);
+    $resultado = EmpleadoController::guardar($_POST['nombre'], $_POST['puesto'], $_POST['salario']);
+    if ($resultado) echo $resultado;
 }
 ?>
 
-<h2 class="text-info"><strong>Registrar nuevo empleador</strong></h2>
+<h2 class="text-info"><strong>Registrar nuevo empleado</strong></h2>
 <div class="card p-4 shadow mt-3" style="max-width: 600px;">
-    <form method="POST">
+    <form method="POST" onsubmit="return confirm('¿Seguro que deseas guardar este empleado?');">
         <div class="mb-3">
             <label class="form-label"><strong>Nombre del empleado</strong></label>
             <input type="text" name="nombre" class="form-control" required>
@@ -21,6 +22,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <button type="submit" class="btn btn-success">Guardar</button>
         <a href="index.php" class="btn btn-secondary">Cancelar</a>
-</div>
-</form>
+    </form>
 </div>

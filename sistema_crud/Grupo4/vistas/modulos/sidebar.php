@@ -1,5 +1,4 @@
-<div class="d-flex">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 250px; min-height: 100vh;">
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 250px; min-height: 100vh;">
         <h5 class="mb-4">
             <i class="bi bi-buildings-fill"></i><strong> TECHSOLUTIONS</strong>
         </h5>
@@ -17,5 +16,5 @@
             </li>
         </ul>
     </div>
-    <div class="w-100 d-flex flex-column justify-content-between">
-        <div class="container-fluid p-4">
+    <div class="w-100 d-flex flex-column justify-content-between" style="min-height: 100vh;">
+        <div class="p-3">

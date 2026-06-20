@@ -20,16 +20,23 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'listar';
         <?php
         switch ($action) {
             case 'guardar':
-                EmpleadoController::guardar($_POST['nombre'], $_POST['puesto'], $_POST['salario']);
+                $resultado = EmpleadoController::guardar($_POST['nombre'], $_POST['puesto'], $_POST['salario']);
+                if ($resultado) echo $resultado;
                 break;
 
             case 'actualizar':
-                EmpleadoController::actualizar($_POST['id'], $_POST['nombre'], $_POST['puesto'], $_POST['salario']);
-                header('Location: index.php');
-                exit;
+                $resultado = EmpleadoController::actualizar($_POST['id'], $_POST['nombre'], $_POST['puesto'], $_POST['salario'], $_POST['activo']);
+                if ($resultado) echo $resultado;
+                break;
+
+            case 'cambiar_estado':
+                $resultado = EmpleadoController::cambiarEstado($_GET['id'], $_GET['estado']);
+                if ($resultado) echo $resultado;
+                break;
 
             case 'eliminar':
-                EmpleadoController::eliminar($_GET['id']);
+                $resultado = EmpleadoController::eliminar($_GET['id']);
+                if ($resultado) echo $resultado;
                 break;
 
             case 'crear':
