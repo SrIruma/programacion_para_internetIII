@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . ('/../../controladores/EmpleadosController.php');
 $empleados = EmpleadosController::listar();
 ?>
 
