@@ -21,11 +21,25 @@ class EmpleadoController {
         header("Location: index.php");
         exit;
     }
+}
+     public static function eliminar($id) {
+        global $conexion;
+        $stmt = $conexion->prepare("DELETE FROM empleados WHERE id = :id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        
+   if($stmt->execute()){
+            header("Location: index.php?msg=eliminado");
+}
+     }
 
-    
-
-    
-
-    
+        public static function obtenerPorId($id) {
+        global $conexion;
+        $stmt = $conexion->prepare("SELECT * FROM empleados WHERE id = :id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+         
+     
 }
 ?>
