@@ -8,7 +8,7 @@
     $pass = "";
 
     try{
-        $conexion = new PDO("mysql:$host; dbname=$db; parset=utf8", $user, $pass);
+        $conexion = new PDO("mysql:host=$host; dbname=$db; parset=utf8", $user, $pass);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 

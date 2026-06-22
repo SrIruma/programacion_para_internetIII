@@ -1,10 +1,9 @@
 </main>
-        <!-- FIN DEL CONTENIDO PRINCIPAL -->
+
 
     </div>
-    <!-- FIN ROW -->
+
 </div>
-<!-- FIN CONTAINER-FLUID -->
 
 <!-- FOOTER -->
 <footer class="bg-dark text-white text-center py-3 mt-auto">

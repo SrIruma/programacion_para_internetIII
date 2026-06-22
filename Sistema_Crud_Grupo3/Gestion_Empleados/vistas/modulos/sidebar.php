@@ -31,5 +31,4 @@
             </ul>
         </nav>
 
-        <!-- CONTENIDO PRINCIPAL (se cierra en footer.php) -->
         <main class="col-md-10 p-4">
