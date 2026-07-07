@@ -20,9 +20,10 @@ class TareaController extends Controller
      */
     public function store(Request $request)
     {
-        $tarea = Tarea::create([
-            'titulo' => $request->titulo,
+        $datos = $request->validate([
+            'titulo' => ['required', 'max:50'],
         ]);
+        $tarea = Tarea::create($datos);
         return response()->json($tarea, 201);
         //
     }
