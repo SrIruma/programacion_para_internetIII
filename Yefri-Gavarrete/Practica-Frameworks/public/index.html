@@ -13,9 +13,10 @@
 
     <ul>
         <li ng-repeat="tarea in tareas">{{ tarea.titulo }}
+            <button ng-click="eliminar(tarea.id)">Eliminar</button>
         </li>
-        <button ng-click="">Eliminar</button>
     </ul>
+
     <script>
         angular.module('app', [])
          .controller('TareaCtrl', function($scope, $http) {
