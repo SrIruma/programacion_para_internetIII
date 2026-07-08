@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            width: 500px;
+            margin: 40px auto;
+        }
+
+        input{
+            width: 300px;
+            padding: 8px;
+        }
+
+        button{
+            padding: 8px 15px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        li{
+            margin: 10px 0;
+        }
+
+        .eliminar{
+            background:red;
+            color:white;
+            border:none;
+        }
+    </style>
+
+</head>
+
+<body ng-controller="TareaController">
+
+    <h1>Mis Tareas</h1>
+
+    <input type="text" id="titulo" name="titulo" ng-model="titulo" placeholder="Escribe una tarea">
+
+    <button ng-click="guardar()">
+        Agregar
+    </button>
+
+    <ul>
+        <li ng-repeat="t in tareas">
+            {{t.titulo}}
+
+            <button class="eliminar" ng-click="eliminar(t.id)">
+                Eliminar
+            </button>
+        </li>
+    </ul>
+</body>
+</html>
