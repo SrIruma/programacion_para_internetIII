@@ -8,6 +8,7 @@ class Tarea extends Model
 {
 
     protected $fillable = ['titulo'];
+    
     public $timestamps = false;
     //
 }
